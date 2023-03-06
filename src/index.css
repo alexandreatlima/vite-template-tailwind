@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Exemplo de como criar classes personalizadas */
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl border rounded-lg mb-6 py-1 my-1 shadow-sm sm:px-6 lg:px-8;
+  }
+}
