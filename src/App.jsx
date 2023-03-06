@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthContextComponent } from "./contexts/authContext";
-import { ErrorPage } from "./pages/ErrorPage";
+import { Error } from "./pages/Error";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Profile } from "./pages/Profile";
@@ -21,7 +21,7 @@ function App() {
             element={<ProtectedRoute component={Profile} />}
           />
 
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </AuthContextComponent>
     </>
