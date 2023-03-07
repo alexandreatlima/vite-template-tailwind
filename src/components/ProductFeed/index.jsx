@@ -27,6 +27,8 @@ export function ProductFeed() {
           <article>
             <img src={cE.picture} alt="Product appearence." />
             <h2>{cE.name}</h2>
+            <p>{cE.creator.address}</p>
+            <p>{cE.creator.neighborhood}</p>
             <Link to={`/user/viewMagic/${cE._id}`}>
               <button className="btn-indigo">See details</button>
             </Link>

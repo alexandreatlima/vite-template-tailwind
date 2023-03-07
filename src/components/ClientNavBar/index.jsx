@@ -6,7 +6,7 @@ export function ClientNavBar() {
       <Link to="/user/profile">
         <button>Profile</button>
       </Link>
-      <Link to="/user/favorites">
+      <Link to="/user/discover">
         <button>Discover</button>
       </Link>
       <Link to="/user/favorites">
