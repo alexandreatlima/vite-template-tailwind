@@ -8,7 +8,12 @@ export function ProtectedClientRoute(props) {
   const parsedUser = JSON.parse(loggedInUser || '""');
   useEffect(() => {
     console.log(parsedUser);
-    if (parsedUser.user.type !== "CLIENT") {
+    try {
+      if (parsedUser.user.type !== "CLIENT") {
+        navigate("/login");
+      }
+    } catch (err) {
+      console.log(err);
       navigate("/login");
     }
   }, []);
