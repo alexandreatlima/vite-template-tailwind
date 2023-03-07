@@ -5,8 +5,8 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Profile } from "./pages/Profile";
 import { Signup } from "./pages/Signup";
-
-import { ProtectedRoute } from "./components/ProtectedRoute";
+import { ProtectedBusinessRoute } from "./components/ProtectedRoutes/protectedBusinessRoute.jsx";
+import { ProtectedClientRoute } from "./components/ProtectedRoutes/protectedClientRoute.jsx";
 
 function App() {
   return (
@@ -18,10 +18,19 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route
-              path="/profile"
-              element={<ProtectedRoute component={Profile} />}
+              path="/user/profile"
+              element={<ProtectedClientRoute component={<Profile />} />}
             />
-
+            <Route
+              path="/user/discover"
+              element={<ProtectedClientRoute component={<ClientDiscover />} />}
+            />
+            <Route
+              path="/user/viewMagic/:idMagic"
+              element={
+                <ProtectedClientRoute component={<ClientProductDetails />} />
+              }
+            />
             <Route path="*" element={<Error />} />
           </Routes>
         </AuthContextComponent>
