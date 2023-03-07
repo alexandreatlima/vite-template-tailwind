@@ -7,4 +7,7 @@
   .container {
     @apply mx-auto max-w-7xl border rounded-lg mb-6 py-1 my-1 shadow-sm sm:px-6 lg:px-8;
   }
+  .btn-indigo {
+    @apply bg-indigo-500 text-white py-2 px-3 rounded-md shadow-md hover:bg-indigo-600;
+  }
 }

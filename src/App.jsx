@@ -11,19 +11,21 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 function App() {
   return (
     <>
-      <AuthContextComponent>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/profile"
-            element={<ProtectedRoute component={Profile} />}
-          />
+      <div class="App bg-slate-200">
+        <AuthContextComponent>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/profile"
+              element={<ProtectedRoute component={Profile} />}
+            />
 
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </AuthContextComponent>
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </AuthContextComponent>
+      </div>
     </>
   );
 }

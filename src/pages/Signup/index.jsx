@@ -9,6 +9,13 @@ export function Signup() {
     email: "",
     password: "",
     confirmPassword: "",
+    type: "",
+    businessType: "",
+    adress: "",
+    neighborhood: "",
+    cpf: "",
+    cnpj: "",
+    contactPhone: "",
   });
 
   const [img, setImg] = useState("");
@@ -48,51 +55,121 @@ export function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
-      <input
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
-      />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
+    <>
+      <h1 className="text-3xl font-bold text-center my-4 ">Sign up</h1>
+      <div class="flex justify-center items-center h-screen">
+        <div class="bg-white p-4 rounded-md shadow-md w-96">
+          <div class="space-y-4">
+            <form onSubmit={handleSubmit}>
+              <div class="flex flex-col">
+                <label htmlFor="formName">Name:</label>
+                <input
+                  id="formName"
+                  name="name"
+                  type="text"
+                  value={form.name}
+                  onChange={handleChange}
+                />
+                {/* <label htmlFor="formImg">Sua foto de perfil:</label>
+                <input type="file" id="formImg" onChange={handleImage} /> */}
 
-      <label htmlFor="formEmail">E-mail:</label>
-      <input
-        id="formEmail"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label>
-      <input
-        id="formPassword"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-      <input
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <button
-        type="submit"
-        className="rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold
+                <label htmlFor="formEmail">E-mail:</label>
+                <input
+                  id="formEmail"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formPassword">Password:</label>
+                <input
+                  id="formPassword"
+                  name="password"
+                  type="password"
+                  value={form.password}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formConfirmPassword">
+                  Confirm your password:
+                </label>
+                <input
+                  id="formConfirmPassword"
+                  type="password"
+                  name="confirmPassword"
+                  value={form.confirmPassword}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formType">Type:</label>
+                <input
+                  id="formType"
+                  type="string"
+                  name="selectType"
+                  value={form.type}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formBusiness">Business Type:</label>
+                <input
+                  id="formBusiness"
+                  type="string"
+                  name="selectBusiness"
+                  value={form.businessType}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formAdress">Adress:</label>
+                <input
+                  id="formAdress"
+                  type="string"
+                  name="selectAdress"
+                  value={form.adress}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formNeighborhood">Neighborhood:</label>
+                <input
+                  id="formNeighborhood"
+                  type="string"
+                  name="selectNeighborhood"
+                  value={form.neighborhood}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formCpf">CPF:</label>
+                <input
+                  id="formCpf"
+                  type="string"
+                  name="selectCpf"
+                  value={form.cpf}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formCnpj">CNPJ:</label>
+                <input
+                  id="formCnpj"
+                  type="string"
+                  name="selectCnpj"
+                  value={form.cnpj}
+                  onChange={handleChange}
+                />
+                <label htmlFor="formContactPhone">Phone contact:</label>
+                <input
+                  id="formContactPhone"
+                  type="string"
+                  name="selectContactPhone"
+                  value={form.contactPhone}
+                  onChange={handleChange}
+                />
+
+                <button
+                  type="submit"
+                  className="rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold
       text-white shadow-sm hover:bg-indigo-500 focus-visible:outline
       focus-visible:outline-2 focus-visible:outline-offset-2
       focus-visible:outline-indigo-600"
-      >
-        Cadastrar
-      </button>
-    </form>
+                >
+                  Cadastrar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
