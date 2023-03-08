@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function ProtectedRoute(props) {
+export function ProtectedClientRoute(props) {
   const { component: Component } = props;
   const navigate = useNavigate();
-
   const loggedInUser = localStorage.getItem("loggedInUser");
-
   const parsedUser = JSON.parse(loggedInUser || '""');
-
   useEffect(() => {
     console.log(parsedUser);
-    if (!parsedUser.token) {
+    try {
+      if (parsedUser.user.type !== "CLIENT") {
+        navigate("/login");
+      }
+    } catch (err) {
+      console.log(err);
       navigate("/login");
     }
   }, []);
-
   return <Component />;
 }

@@ -7,7 +7,6 @@ function AuthContextComponent(props) {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");
-
     const parsedStoredUser = JSON.parse(storedUser || '""');
     if (parsedStoredUser.token) {
       setLoggedInUser(parsedStoredUser);
@@ -15,7 +14,6 @@ function AuthContextComponent(props) {
       setLoggedInUser(null);
     }
   }, []);
-
   return (
     <AuthContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       {props.children}
