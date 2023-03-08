@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ClientNavBar } from "../../components/ClientNavBar";
+import { AuthContext } from "../../contexts/authContext";
+import { useContext } from "react";
 
 export function ViewProfile() {
-  const [form, setForm] = useState([]);
-  const [orders, setOrders] = useState([]);
+  const [form, setForm] = useState([]),
+    [orders, setOrders] = useState([]),
+    navigate = useNavigate(),
+    context = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchForms() {
@@ -25,7 +29,8 @@ export function ViewProfile() {
 
   function handleLogOut() {
     localStorage.removeItem("loggedInUser");
-    setLoggedInUser(null);
+    context.setLoggedInUser(null);
+    console.log("I am here");
     navigate("/");
   }
 
@@ -38,7 +43,7 @@ export function ViewProfile() {
           Your profile here
         </h1>
         <img src="https://res.cloudinary.com/dukhlscyh/image/upload/v1678297300/pictures/file_zbjqpx.png"></img>
-        <div className="flex flex-row gap-10 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
+        <div className="flex flex-row flex-nowrap gap-4 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
           <p>{form.name}</p>
           <p>{form.email}</p>
           <p>{form.type}</p>
@@ -47,17 +52,17 @@ export function ViewProfile() {
           <p>{form.cpf}</p>
           <p>{form.contactPhone}</p>
 
-          <Link to={"/user/profile"}>
-            <button className="btn-indigo">Edit</button>
-          </Link>
-
           {/* {orders.map((currentOrder) => {
         return <h2>{currentOrder.client}</h2>;
       })}
       <Link to={"/user/order"}>
         <button className="btn-indigo">Check all orders</button>
       </Link> */}
-
+        </div>
+        <div className="flex flex-row justify-center items-center gap-10">
+          <Link to={"/user/profile"}>
+            <button className="btn-indigo">Edit</button>
+          </Link>
           <button onClick={handleLogOut} type="submit" className="btn-indigo">
             Log out
           </button>
