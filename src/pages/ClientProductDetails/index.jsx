@@ -1,3 +1,14 @@
+import { ClientNavBar } from "../../components/ClientNavBar";
+
 export function ClientProductDetails() {
-  return <>Client product details</>;
+  return (
+    <>
+      <ClientNavBar />
+      <Logo />
+      <ProductPicture />
+      <LikeBtn />
+      <ProductInfo />
+      <CreateOrder />
+    </>
+  );
 }

@@ -13,16 +13,12 @@ import { ClientProductDetails } from "./pages/ClientProductDetails";
 function App() {
   return (
     <>
-      <div class="App bg-slate-200">
+      <div class="App bg-indigo-100">
         <AuthContextComponent>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            <Route
-              path="/user/profile"
-              element={<ProtectedClientRoute component={Profile} />}
-            />
             <Route
               path="/user/discover"
               element={<ProtectedClientRoute component={ClientDiscover} />}

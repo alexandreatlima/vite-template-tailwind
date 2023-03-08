@@ -34,7 +34,7 @@ export function ProductFeed(props) {
           )
           .map((cE) => {
             return (
-              <article className="container border border-indigo-300 flex flex-col justify-between items-center w-1/4 gap-5 justify-evenly py-5">
+              <article className="container bg-slate-100 border border-indigo-300 flex flex-col justify-between items-center w-1/4 gap-5 justify-evenly py-5">
                 <img
                   src={cE.picture}
                   alt="Product appearence."
@@ -43,7 +43,7 @@ export function ProductFeed(props) {
                 <div className="flex flex-col items-center gap-2">
                   <h2 className="font-semibold text-3xl">{cE.name}</h2>
                   <p className="text-xs italic text-center">
-                    Endereço: {cE.creator.address}.
+                    Address: {cE.creator.address}.
                   </p>
                   <p className="text-sm font-semibold text-center">
                     Neighborhood: {cE.creator.neighborhood}.
