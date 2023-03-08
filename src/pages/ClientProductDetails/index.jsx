@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NameLogo } from "../../components/NameLogo";
 import { api } from "../../api/api";
-import { ProductDetails } from "../../components/ProductDetails";
+import { ProductDetailsAndOrder } from "../../components/ProductDetailsAndOrder";
 
 export function ClientProductDetails() {
   const params = useParams();
@@ -26,8 +26,7 @@ export function ClientProductDetails() {
     <div className="min-h-screen">
       <ClientNavBar />
       <NameLogo product={selProduct} />
-      <ProductDetails product={selProduct} />
-      {/* <CreateOrder product={selProduct} /> */}
+      <ProductDetailsAndOrder product={selProduct} />
     </div>
   );
 }

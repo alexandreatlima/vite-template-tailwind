@@ -38,7 +38,7 @@ export function ProductFeed(props) {
                 <img
                   src={cE.picture}
                   alt="Product appearence."
-                  className="rounded-2xl shadow-xl"
+                  className="rounded-2xl shadow-xl max-h-48 max-w-full"
                 />
                 <div className="flex flex-col items-center gap-2">
                   <div className="flex flex-col items-center">

@@ -22,10 +22,10 @@ export function ClientOrder() {
     <>
       <h1>Your current order in here</h1>
 
-      <h2>{currentOrder.product}</h2>
-      <h2>{currentOrder.business}</h2>
-      <h2>{currentOrder.client}</h2>
-      <h2>{currentOrder.status}</h2>
+      <h2>{orders.product}</h2>
+      <h2>{orders.business}</h2>
+      <h2>{orders.client}</h2>
+      <h2>{orders.status}</h2>
 
       <button className="btn-indigo">Cancel order</button>
     </>

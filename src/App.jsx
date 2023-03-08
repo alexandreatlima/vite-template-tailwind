@@ -33,7 +33,7 @@ function App() {
               element={<ProtectedClientRoute component={ViewProfile} />}
             />
             <Route
-              path="/user/order"
+              path="/user/viewOrder/:idOrder"
               element={<ProtectedClientRoute component={ClientOrder} />}
             />
             <Route
