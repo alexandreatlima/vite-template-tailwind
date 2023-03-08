@@ -7,17 +7,15 @@ export function SearchBar(props) {
     setSearchText(e.target.value);
     changeSearch(e.target.value);
   }
-
   useEffect(() => {
     return () => {
       setSearchText("");
       changeSearch("");
     };
   }, []);
-
   return (
     <div>
-      <form className="w-full flex justify-center mb-8">
+      <form className="bg-white rounded-2xl w-9/12 flex justify-center align-center mb-6 mx-auto border border-black">
         <input
           type="search"
           id="search"
@@ -25,10 +23,9 @@ export function SearchBar(props) {
           placeholder="Search"
           value={searchText}
           onChange={handleChange}
-          className="rounded-2xl w-10/12"
+          className="rounded-2xl w-full"
         />
       </form>
-      {/*Acrescentar ícone de busca*/}
     </div>
   );
 }

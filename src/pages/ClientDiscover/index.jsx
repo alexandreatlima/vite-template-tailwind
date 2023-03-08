@@ -9,10 +9,10 @@ export function ClientDiscover() {
     setSearch(text);
   }
   return (
-    <>
+    <div className="min-h-screen">
       <ClientNavBar />
       <SearchBar changeSearch={changeSearch} />
       <ProductFeed search={search} />
-    </>
+    </div>
   );
 }
