@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../api/api";
+import { ClientNavBar } from "../../components/ClientNavBar";
 
 export function ClientOrder() {
   const [orders, setOrder] = useState({});
@@ -20,6 +21,7 @@ export function ClientOrder() {
 
   return (
     <>
+      <ClientNavBar />
       <h1>Your current order in here</h1>
 
       <h2>{orders.product}</h2>

@@ -8,11 +8,11 @@ import { Signup } from "./pages/Signup";
 import { Favorites } from "./pages/Favorites";
 import { ClientOrder } from "./pages/ClientOrder";
 import { ViewProfile } from "./pages/ViewProfile";
-import { Discover } from "./pages/Discover";
 import { ProtectedBusinessRoute } from "./components/ProtectedRoutes/protectedBusinessRoute.jsx";
 import { ProtectedClientRoute } from "./components/ProtectedRoutes/protectedClientRoute.jsx";
 import { ClientDiscover } from "./pages/ClientDiscover";
 import { ClientProductDetails } from "./pages/ClientProductDetails";
+import { DiscoverNotClient } from "./pages/DiscoverNotClient";
 
 function App() {
   return (
@@ -21,9 +21,9 @@ function App() {
         <AuthContextComponent>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/discover" element={<Discover />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/discover" element={<DiscoverNotClient />} />
             <Route
               path="/user/profile"
               element={<ProtectedClientRoute component={Profile} />}

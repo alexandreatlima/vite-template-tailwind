@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { Link } from "react-router-dom";
+import { ClientNavBar } from "../../components/ClientNavBar";
 
 export function ViewProfile() {
   const [form, setForm] = useState([]);
@@ -29,35 +30,39 @@ export function ViewProfile() {
   }
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Your profile here</h1>
+    <div className="h-screen">
+      <ClientNavBar />
 
-      <p>{form.name}</p>
-      <p>{form.email}</p>
-      <p>{form.type}</p>
-      <p>{form.address}</p>
-      <p>{form.neighborhood}</p>
-      <p>{form.cpf}</p>
-      <p>{form.contactPhone}</p>
+      <section className="w-screen flex flex-col items-center">
+        <h1 className="font-semibold mb-4 text-3xl text-indigo-900">
+          Your profile here
+        </h1>
+        <img src="https://res.cloudinary.com/dukhlscyh/image/upload/v1678297300/pictures/file_zbjqpx.png"></img>
+        <div className="flex flex-row gap-10 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
+          <p>{form.name}</p>
+          <p>{form.email}</p>
+          <p>{form.type}</p>
+          <p>{form.address}</p>
+          <p>{form.neighborhood}</p>
+          <p>{form.cpf}</p>
+          <p>{form.contactPhone}</p>
 
-      <Link to={"/user/profile"}>
-        <button className="btn-indigo">Edit</button>
-      </Link>
-      {/* 
-      {orders.map((currentOrder) => {
-        return <h2>{currentOrder.idUser}</h2>;
+          <Link to={"/user/profile"}>
+            <button className="btn-indigo">Edit</button>
+          </Link>
+
+          {/* {orders.map((currentOrder) => {
+        return <h2>{currentOrder.client}</h2>;
       })}
       <Link to={"/user/order"}>
         <button className="btn-indigo">Check all orders</button>
       </Link> */}
 
-      <button
-        onClick={handleLogOut}
-        type="submit"
-        className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        Log out
-      </button>
-    </>
+          <button onClick={handleLogOut} type="submit" className="btn-indigo">
+            Log out
+          </button>
+        </div>
+      </section>
+    </div>
   );
 }

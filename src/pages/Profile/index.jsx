@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, useParams } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
 import { AuthContext } from "../../contexts/authContext";
+import { ClientNavBar } from "../../components/ClientNavBar";
 
 export function Profile() {
   const { setLoggedInUser } = useContext(AuthContext);
@@ -79,11 +80,13 @@ export function Profile() {
   // consigo editar tudo MENOS o Endereço, não sei pq
   return (
     <>
+      <ClientNavBar />
       <div className="container">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
               <div>
+                <img src="https://res.cloudinary.com/dukhlscyh/image/upload/v1678297300/pictures/file_zbjqpx.png"></img>
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
                   Your Profile Picture:
                 </h3>
