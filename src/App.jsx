@@ -17,7 +17,7 @@ import { DiscoverNotClient } from "./pages/DiscoverNotClient";
 function App() {
   return (
     <>
-      <div class="App bg-indigo-100">
+      <div class="App bg-indigo-100 h-full">
         <AuthContextComponent>
           <Routes>
             <Route path="/" element={<Home />} />

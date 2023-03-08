@@ -22,10 +22,22 @@ export function ClientProductDetails() {
     getProduct();
   }, []);
 
+  async function addLike() {
+    try {
+      const response = await api.post(
+        `/api/user/post/favorites/${selProduct.creator._id}`
+      );
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <ClientNavBar />
       <NameLogo product={selProduct} />
+      <button onClick={addLike}>Like</button>
       <ProductDetailsAndOrder product={selProduct} />
     </div>
   );
