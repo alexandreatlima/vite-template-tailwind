@@ -11,7 +11,7 @@ export function Signup() {
     confirmPassword: "",
     type: "",
     businessType: "",
-    adress: "",
+    address: "",
     neighborhood: "",
     cpf: "",
     cnpj: "",
@@ -45,8 +45,8 @@ export function Signup() {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      // const imgURL = await handleUpload();
+      await api.post("/api/user/signup", { ...form });
 
       navigate("/login");
     } catch (error) {
@@ -70,9 +70,6 @@ export function Signup() {
                   value={form.name}
                   onChange={handleChange}
                 />
-                {/* <label htmlFor="formImg">Sua foto de perfil:</label>
-                <input type="file" id="formImg" onChange={handleImage} /> */}
-
                 <label htmlFor="formEmail">E-mail:</label>
                 <input
                   id="formEmail"
@@ -103,7 +100,7 @@ export function Signup() {
                 <input
                   id="formType"
                   type="string"
-                  name="selectType"
+                  name="type"
                   value={form.type}
                   onChange={handleChange}
                 />
@@ -111,7 +108,7 @@ export function Signup() {
                 <input
                   id="formBusiness"
                   type="string"
-                  name="selectBusiness"
+                  name="businessType"
                   value={form.businessType}
                   onChange={handleChange}
                 />
@@ -119,15 +116,15 @@ export function Signup() {
                 <input
                   id="formAdress"
                   type="string"
-                  name="selectAdress"
-                  value={form.adress}
+                  name="address"
+                  value={form.address}
                   onChange={handleChange}
                 />
                 <label htmlFor="formNeighborhood">Neighborhood:</label>
                 <input
                   id="formNeighborhood"
                   type="string"
-                  name="selectNeighborhood"
+                  name="neighborhood"
                   value={form.neighborhood}
                   onChange={handleChange}
                 />
@@ -135,7 +132,7 @@ export function Signup() {
                 <input
                   id="formCpf"
                   type="string"
-                  name="selectCpf"
+                  name="cpf"
                   value={form.cpf}
                   onChange={handleChange}
                 />
@@ -143,7 +140,7 @@ export function Signup() {
                 <input
                   id="formCnpj"
                   type="string"
-                  name="selectCnpj"
+                  name="cnpj"
                   value={form.cnpj}
                   onChange={handleChange}
                 />
@@ -151,7 +148,7 @@ export function Signup() {
                 <input
                   id="formContactPhone"
                   type="string"
-                  name="selectContactPhone"
+                  name="contactPhone"
                   value={form.contactPhone}
                   onChange={handleChange}
                 />
