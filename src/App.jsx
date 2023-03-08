@@ -26,7 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route
               path="/user/profile"
-              element={<ProtectedRoute component={Profile} />}
+              element={<ProtectedClientRoute component={Profile} />}
             />
             <Route
               path="/user/viewProfile"

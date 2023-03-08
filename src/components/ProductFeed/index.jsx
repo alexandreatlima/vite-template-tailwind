@@ -41,7 +41,14 @@ export function ProductFeed(props) {
                   className="rounded-2xl shadow-xl"
                 />
                 <div className="flex flex-col items-center gap-2">
-                  <h2 className="font-semibold text-3xl">{cE.name}</h2>
+                  <div className="flex flex-col items-center">
+                    <h2 className="font-semibold text-3xl">{cE.name}</h2>
+                    <h2 className="font-semibold text-2xl">
+                      {`R$ ${Math.floor(cE.price / 100)},${
+                        String(cE.price)[String(cE.price).length - 2]
+                      }${String(cE.price)[String(cE.price).length - 1]}`}
+                    </h2>
+                  </div>
                   <p className="text-xs italic text-center">
                     Address: {cE.creator.address}.
                   </p>
