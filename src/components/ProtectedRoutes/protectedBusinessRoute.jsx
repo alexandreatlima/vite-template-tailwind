@@ -8,7 +8,12 @@ export function ProtectedBusinessRoute(props) {
   const parsedUser = JSON.parse(loggedInUser || '""');
   useEffect(() => {
     console.log(parsedUser);
-    if (parsedUser.user.type !== "BUSINESS") {
+    try {
+      if (parsedUser.user.type !== "BUSINESS") {
+        navigate("/login");
+      }
+    } catch (err) {
+      console.log(err);
       navigate("/login");
     }
   }, []);
