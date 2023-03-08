@@ -26,14 +26,14 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route
               path="/user/profile"
-              element={<ProtectedRoute component={Profile} />}
+              element={<ProtectedClientRoute component={Profile} />}
             />
             <Route
               path="/user/viewProfile"
               element={<ProtectedClientRoute component={ViewProfile} />}
             />
             <Route
-              path="/user/order"
+              path="/user/viewOrder/:idOrder"
               element={<ProtectedClientRoute component={ClientOrder} />}
             />
             <Route
