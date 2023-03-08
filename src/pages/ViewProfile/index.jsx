@@ -17,15 +17,16 @@ export function ViewProfile() {
         const response = await api.get("/api/user/get");
         const responseOrders = await api.get("/api/order/get/myOrders");
         setForm(response.data);
-        setOrders(responseOrders.data);
+        setOrders(responseOrders.data.orders);
         console.log(responseOrders);
-        console.log(orders);
       } catch (err) {
         console.log(err);
       }
     }
     fetchForms();
   }, []);
+
+  console.log(orders);
 
   function handleLogOut() {
     localStorage.removeItem("loggedInUser");
@@ -52,21 +53,21 @@ export function ViewProfile() {
           <p>{form.cpf}</p>
           <p>{form.contactPhone}</p>
 
-          {/* {orders.map((currentOrder) => {
-        return <h2>{currentOrder.client}</h2>;
-      })}
-      <Link to={"/user/order"}>
-        <button className="btn-indigo">Check all orders</button>
-      </Link> */}
+          <div className="flex flex-row justify-center items-center gap-10">
+            <Link to={"/user/profile"}>
+              <button className="btn-indigo">Edit</button>
+            </Link>
+
+            <button onClick={handleLogOut} type="submit" className="btn-indigo">
+              Log out
+            </button>
+          </div>
         </div>
-        <div className="flex flex-row justify-center items-center gap-10">
-          <Link to={"/user/profile"}>
-            <button className="btn-indigo">Edit</button>
-          </Link>
-          <button onClick={handleLogOut} type="submit" className="btn-indigo">
-            Log out
-          </button>
-        </div>
+        <section className="flex flex-row justify-evenly">
+          {orders.map((currentOrder) => {
+            return <h2>{currentOrder.business.name}</h2>;
+          })}
+        </section>
       </section>
     </div>
   );
