@@ -10,7 +10,7 @@ export function Favorites() {
       try {
         const response = await api.get("/api/user/get/all-favorites");
         console.log(response.data);
-        // setFavorites([...response.data]);
+        setFavorites(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -26,7 +26,12 @@ export function Favorites() {
           Your favorites here
         </h1>
         {favorites.map((currentFavorite) => {
-          return <h2>{currentFavorite.idUser}</h2>;
+          return (
+            <article>
+              <img src={correntFavorite.picture} />
+              <h2>{currentFavorite.idUser}</h2>
+            </article>
+          );
         })}
         <button className="btn-indigo">Unfollow</button>
       </section>
