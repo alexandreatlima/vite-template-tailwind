@@ -8,6 +8,8 @@ export function ClientDiscover() {
   function changeSearch(text) {
     setSearch(text);
   }
+
+  console.log(search);
   return (
     <div className="min-h-screen">
       <ClientNavBar />
