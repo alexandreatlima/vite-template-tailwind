@@ -17,7 +17,7 @@ export function SearchBar(props) {
 
   return (
     <div>
-      <form>
+      <form className="w-full flex justify-center mb-8">
         <input
           type="search"
           id="search"
@@ -25,6 +25,7 @@ export function SearchBar(props) {
           placeholder="Search"
           value={searchText}
           onChange={handleChange}
+          className="rounded-2xl w-10/12"
         />
       </form>
       {/*Acrescentar ícone de busca*/}
