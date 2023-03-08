@@ -14,9 +14,6 @@ export function Profile() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    password: "",
-    confirmPassword: "",
-    type: "",
     address: "",
     neighborhood: "",
     cpf: "",
@@ -64,7 +61,7 @@ export function Profile() {
 
     try {
       const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      await api.post("/user/signup", { ...form, picture: imgURL });
 
       navigate("/login");
     } catch (error) {
@@ -77,7 +74,6 @@ export function Profile() {
     navigate("/");
   }
 
-  // consigo editar tudo MENOS o Endereço, não sei pq
   return (
     <>
       <ClientNavBar />
@@ -92,7 +88,12 @@ export function Profile() {
                 </h3>
                 {/* 
                 <label htmlFor="formImg">Your Profile Picture:</label> */}
-                <input type="file" id="formImg" onChange={handleImage} />
+                <input
+                  name="picture"
+                  type="file"
+                  id="picture"
+                  onChange={handleImage}
+                />
               </div>
               <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                 <div className="sm:col-span-3">
@@ -155,26 +156,6 @@ export function Profile() {
                   </div>
                 </div>
 
-                <div className="sm:col-span-3">
-                  <label
-                    htmlFor="type"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Type:
-                  </label>
-                  <div className="mt-1">
-                    <select
-                      id="type"
-                      name="type"
-                      autoComplete="user-type"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    >
-                      <option>Client</option>
-                      <option>Business</option>
-                    </select>
-                  </div>
-                </div>
-
                 <div className="sm:col-span-6">
                   <label
                     htmlFor="street-address"
@@ -230,24 +211,6 @@ export function Profile() {
                       name="cpf"
                       id="cpf"
                       autoComplete="cpf"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2">
-                  <label
-                    htmlFor="postal-code"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    ZIP / Postal code
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="postal-code"
-                      id="postal-code"
-                      autoComplete="postal-code"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>

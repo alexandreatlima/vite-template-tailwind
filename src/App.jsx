@@ -13,6 +13,10 @@ import { ProtectedClientRoute } from "./components/ProtectedRoutes/protectedClie
 import { ClientDiscover } from "./pages/ClientDiscover";
 import { ClientProductDetails } from "./pages/ClientProductDetails";
 import { DiscoverNotClient } from "./pages/DiscoverNotClient";
+import { BusinessForm } from "./pages/BusinessForm";
+import { BusinessProfile } from "./pages/BussinesProfile";
+import { BusinessAdmin } from "./pages/BusinessAdmin";
+import { BusinessEdit } from "./pages/BusinessEdit";
 
 function App() {
   return (
@@ -49,6 +53,22 @@ function App() {
               element={
                 <ProtectedClientRoute component={ClientProductDetails} />
               }
+            />
+            <Route
+              path="/business/admin"
+              element={<ProtectedBusinessRoute component={BusinessAdmin} />}
+            />
+            <Route
+              path="/business/admin/profile"
+              element={<ProtectedBusinessRoute component={BusinessProfile} />}
+            />
+            <Route
+              path="/business/admin/create-form"
+              element={<ProtectedBusinessRoute component={BusinessForm} />}
+            />
+            <Route
+              path="/business/admin/edit"
+              element={<ProtectedBusinessRoute component={BusinessEdit} />}
             />
             <Route path="*" element={<Error />} />
           </Routes>

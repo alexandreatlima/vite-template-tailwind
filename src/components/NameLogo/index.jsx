@@ -32,7 +32,7 @@ export function NameLogo(props) {
   console.log("Everything is alright. Picture URL bellow:");
   console.log(product.creator.picture);
   const logoUrl = product.creator.picture;
-  const fullClassWithBgImg = `rounded-full w-32 h-32 border-2 border-black p-auto bg-[url('${logoUrl}')]`;
+  const fullClassWithBgImg = `rounded-full w-32 h-32 border-2 border-black p-auto bg-[url("${product.creator.picture}")]`;
   return (
     <div className="bg-slate-100 rounded drop-shadow-lg flex justify-center gap-20 items-center px-16 border-b-4 border-indigo-900 w-9/12 mx-auto p-6">
       <h1 className="text-6xl text-indigo-900">{product.name}</h1>
