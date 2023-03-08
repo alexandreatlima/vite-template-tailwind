@@ -43,7 +43,7 @@ export function ViewProfile() {
           Your profile here
         </h1>
         <img src="https://res.cloudinary.com/dukhlscyh/image/upload/v1678297300/pictures/file_zbjqpx.png"></img>
-        <div className="flex flex-row flex-nowrap gap-4 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
+        <div className="justify-evenly flex flex-row flex-nowrap gap-4 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
           <p>{form.name}</p>
           <p>{form.email}</p>
           <p>{form.type}</p>
