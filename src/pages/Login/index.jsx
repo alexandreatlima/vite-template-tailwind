@@ -11,23 +11,23 @@ export function Login() {
   });
 
   const navigate = useNavigate();
-
   const { setLoggedInUser } = useContext(AuthContext);
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
   async function handleSumit(e) {
     e.preventDefault();
-
     try {
       const response = await api.post("/api/user/login", form);
       setLoggedInUser({ ...response.data });
-
+      console.log(response);
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-
-      navigate("/discover");
+      if (response.data.user.type === "BUSINESS") {
+        navigate("/business/admin");
+      } else {
+        navigate("/user/discover");
+      }
     } catch (error) {
       console.log(error);
     }
