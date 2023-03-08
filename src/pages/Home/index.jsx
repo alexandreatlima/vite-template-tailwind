@@ -6,13 +6,13 @@ export function Home() {
   return (
     <>
       <div
-        class="bg-cover bg-center h-screen"
+        className="bg-cover bg-center h-screen"
         style={{ backgroundImage: `url(${img})` }}
       >
         <HomeIcon className="h-6 w-6 text-blue-500" />
         <h1 className="text-3xl font-bold text-center my-4 ">Fair Share!</h1>
-        <div class="flex flex-col items-center justify-end h-80">
-          <div class="flex justify-center">
+        <div className="flex flex-col items-center justify-end h-80">
+          <div className="flex justify-center">
             <Link to="/discover">
               <button className="btn-indigo mr-2">Save Food</button>
             </Link>
