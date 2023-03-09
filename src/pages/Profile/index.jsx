@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
 import { AuthContext } from "../../contexts/authContext";
 import { ClientNavBar } from "../../components/ClientNavBar";
+import { Link } from "react-router-dom";
 
 export function Profile() {
   const { setLoggedInUser } = useContext(AuthContext);
@@ -48,7 +49,7 @@ export function Profile() {
       const uploadData = new FormData();
       uploadData.append("picture", img);
 
-      const response = await api.post("/upload-image", uploadData);
+      const response = await api.post("/api/uploadImage", uploadData);
 
       return response.data.url;
     } catch (error) {
@@ -60,9 +61,14 @@ export function Profile() {
     e.preventDefault();
 
     try {
+      console.log("antes do handleupload");
       const imgURL = await handleUpload();
+      console.log("depois do handle");
+
       await api.put("/api/user/edit", { ...form, picture: imgURL });
-      navigate("/user/profile");
+
+      console.log("depois do put");
+      navigate("/user/viewProfile");
     } catch (error) {
       console.log(error);
     }
@@ -221,12 +227,13 @@ export function Profile() {
           <div className="pt-5">
             <div className="flex justify-end">
               <button
-                onClick={handleChange}
+                onClick={handleSubmit}
                 type="button"
                 className="rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
               >
                 Save
               </button>
+
               <button
                 onClick={handleLogOut}
                 type="submit"

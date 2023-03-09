@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { BusinessNavBar } from "../../components/BusinessNavBar";
 
 export function BusinessForm() {
   const [form, setForm] = useState({
@@ -42,7 +43,7 @@ export function BusinessForm() {
         price: form.price * 100,
       });
       console.log("I have just submitted the form.");
-      navigate("/business/admin/profile");
+      navigate("/business/admin");
     } catch (error) {
       console.log(error);
       // Colocar toast avisando que o produto não foi salvo e que todos os campos precisam ser preenchidos para cirar um novo
@@ -52,6 +53,7 @@ export function BusinessForm() {
 
   return (
     <div>
+      <BusinessNavBar />
       <div className="container">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">

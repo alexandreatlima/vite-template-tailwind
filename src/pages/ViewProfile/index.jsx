@@ -73,7 +73,7 @@ export function ViewProfile() {
             {!isLoading &&
               orders.map((currentOrder) => {
                 return (
-                  <div>
+                  <div key={currentOrder._id}>
                     <img
                       src={currentOrder.business.picture}
                       alt="product picture"
