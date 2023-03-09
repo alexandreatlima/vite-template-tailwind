@@ -23,7 +23,7 @@ import { BusinessProductDetail } from "./pages/BusinessProductDetail";
 function App() {
   return (
     <>
-      <div class="App bg-indigo-100 h-full">
+      <div className="App bg-indigo-100 h-full">
         <AuthContextComponent>
           <Routes>
             <Route path="/" element={<Home />} />

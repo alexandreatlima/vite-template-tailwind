@@ -27,7 +27,7 @@ export function Favorites() {
         </h1>
         {favorites.map((currentFavorite) => {
           return (
-            <article>
+            <article key={currentFavorite._id}>
               <img src={currentFavorite.picture} />
               <h2>{currentFavorite.name}</h2>
             </article>
