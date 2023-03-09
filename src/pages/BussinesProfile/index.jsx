@@ -7,7 +7,9 @@ import { useContext } from "react";
 
 export function BusinessProfile() {
   const [form, setForm] = useState([]);
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(true),
+    navigate = useNavigate(),
+    context = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchForms() {
@@ -16,7 +18,6 @@ export function BusinessProfile() {
 
         setForm(response.data);
         setisLoading(false);
-        console.log(responseOrders);
       } catch (err) {
         console.log(err);
       }
@@ -33,11 +34,11 @@ export function BusinessProfile() {
 
   return (
     <div>
-      <section className="w-screen flex flex-col items-center">
+      <section className="w-screen flex flex-col items-center min-h-screen">
         <h1 className="font-semibold mb-4 text-3xl text-indigo-900">
           Your profile here
         </h1>
-        <img src={form.picture}></img>
+        <img src={form.picture} className="w-56 h-56 rounded-full mb-5"></img>
         <div className="justify-evenly flex flex-row flex-nowrap gap-4 flex-wrap w-11/12 border-t border-t-indigo-800 mx-auto box-border p-6">
           <p>{form.name}</p>
           <p>{form.email}</p>
