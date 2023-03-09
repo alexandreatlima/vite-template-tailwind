@@ -61,9 +61,8 @@ export function Profile() {
 
     try {
       const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, picture: imgURL });
-
-      navigate("/login");
+      await api.put("/api/user/edit", { ...form, picture: imgURL });
+      navigate("/user/profile");
     } catch (error) {
       console.log(error);
     }

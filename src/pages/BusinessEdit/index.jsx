@@ -67,7 +67,6 @@ export function BusinessEdit() {
   }
 
   return (
-<<<<<<< HEAD
     <>
       <BusinessNavBar />
       <div className="container">
@@ -80,21 +79,6 @@ export function BusinessEdit() {
                   Your Profile Picture:
                 </h3>
                 {/* 
-=======
-    <div className="container">
-      <form className="space-y-8 divide-y divide-gray-200">
-        <div className="space-y-8 divide-y divide-gray-200">
-          <div className="pt-8">
-            <div>
-              <img
-                src={form.picture}
-                className="w-56 h-56 rounded-full mb-5"
-              ></img>
-              <h3 className="text-base font-semibold leading-6 text-gray-900">
-                Your Profile Picture:
-              </h3>
-              {/* 
->>>>>>> f934ad346568dd448b3f815edbd276f00656af8e
           <label htmlFor="formImg">Your Profile Picture:</label> */}
                 <input
                   name="picture"
@@ -124,7 +108,6 @@ export function BusinessEdit() {
                   </div>
                 </div>
 
-<<<<<<< HEAD
                 <div className="sm:col-span-3">
                   <label
                     htmlFor="last-name"
@@ -143,25 +126,6 @@ export function BusinessEdit() {
                       className="focus:ring-inest block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
-=======
-              <div className="sm:col-span-6">
-                <label
-                  htmlFor="street-address"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Street address
-                </label>
-                <div className="mt-1">
-                  <input
-                    onChange={handleChange}
-                    value={form.address}
-                    type="text"
-                    name="address"
-                    id="address"
-                    autoComplete="street-address"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
->>>>>>> f934ad346568dd448b3f815edbd276f00656af8e
                 </div>
 
                 <div className="sm:col-span-4">

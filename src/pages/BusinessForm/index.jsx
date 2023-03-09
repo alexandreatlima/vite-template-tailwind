@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { BusinessNavBar } from "../../components/BusinessNavBar";
-
-export function BusinessForm() {
-  return (
-    <>
-      <BusinessNavBar />
-      <div></div>
-    </>
-=======
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
@@ -183,6 +173,5 @@ export function BusinessForm() {
         </form>
       </div>
     </div>
->>>>>>> f934ad346568dd448b3f815edbd276f00656af8e
   );
 }
