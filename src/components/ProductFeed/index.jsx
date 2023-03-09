@@ -30,7 +30,8 @@ export function ProductFeed(props) {
               cE.name.toLowerCase().includes(search.toLowerCase()) ||
               cE.creator.neighborhood
                 .toLowerCase()
-                .includes(search.toLowerCase())
+                .includes(search.toLowerCase()) ||
+              cE.creator.address.toLowerCase().includes(search.toLowerCase())
           )
           .map((cE) => {
             return (

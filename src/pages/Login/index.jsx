@@ -34,38 +34,42 @@ export function Login() {
   }
 
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center my-4 ">Login</h1>
+    <div className="min-h-screen">
+      <h1 className="text-5xl font-bold text-center mb-12 pt-24">Login</h1>
 
-      <div className="flex justify-center ">
+      <div className="w-10/12 flex flex-col justify-center items-center m-auto">
         <form onSubmit={handleSumit}>
-          <div className="flex flex-col chat-notification-title">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            <label>Senha:</label>
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-            />
+          <div className="flex flex-col chat-notification-title gap-6 w-72">
+            <div className="flex flex-col">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className="rounded-xl"
+                placeholder="email"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label>Senha:</label>
+              <input
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                className="rounded-xl"
+                placeholder="password"
+              />
+            </div>
           </div>
-          <button
-            type="submit"
-            className="rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold
-      text-white shadow-sm hover:bg-indigo-500 focus-visible:outline
-      focus-visible:outline-2 focus-visible:outline-offset-2
-      focus-visible:outline-indigo-600"
-          >
-            Entrar!
-          </button>
+          <div className="mx-auto mt-12 text-center">
+            <button type="submit" className="btn-indigo mx-auto text-center">
+              Entrar!
+            </button>
+          </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }

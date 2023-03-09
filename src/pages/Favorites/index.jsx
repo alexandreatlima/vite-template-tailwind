@@ -32,11 +32,11 @@ export function Favorites() {
   return (
     <>
       <ClientNavBar />
+      <h1 className="w-1/3 font-semibold mb-6 text-3xl text-indigo-900 pl-28 pb-5 underline">
+        Your favorites:
+      </h1>
       <section className="w-screen flex flex-col items-center min-h-screen">
-        <h1 className="font-semibold mb-6 text-3xl text-indigo-900">
-          Your favorites here
-        </h1>
-        <div className="border-t-2 border-t-indigo-800 w-10/12 pt-8 rounded flex flex-col items-center">
+        <div className="w-10/12 pt-8 rounded flex flex-col items-center">
           {favorites.map((currentFavorite) => {
             return (
               <article
