@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NameLogo } from "../../components/NameLogo";
 import { api } from "../../api/api";
@@ -10,6 +10,7 @@ export function BusinessProductDetail() {
   const [showForm, setShowForm] = useState(false);
   const [reload, setReload] = useState(false);
   const [form, setForm] = useState({ expirationDate: "" });
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getProduct() {
@@ -36,6 +37,12 @@ export function BusinessProductDetail() {
       console.log(err);
     }
   }
+
+  async function handleDelete() {
+    await api.delete(`/api/product/delete/${params.idProduct}`);
+    navigate("/business/admin");
+  }
+
   // fazer inputs do form com value do form no handleChange
   return (
     <div>
@@ -74,15 +81,24 @@ export function BusinessProductDetail() {
         </div>
       </section>
 
-      <button onClick={() => setShowForm(!showForm)}>
+      <button
+        className="btn-indigo bg-yellow-500"
+        onClick={() => setShowForm(!showForm)}
+      >
         Editar Produtos aqui
+      </button>
+
+      <button className="btn-indigo bg-red-500" onClick={handleDelete}>
+        Excluir produto
       </button>
 
       {showForm && (
         <>
           <form>
             aqui vai o formulario para editar o produto
+            <label htmlFor="expirationDate">Set new expiration date: </label>
             <input
+              id="expirationDate"
               name="expirationDate"
               type="date"
               value={form.expirationDate}
@@ -90,6 +106,12 @@ export function BusinessProductDetail() {
             />
           </form>
           <button onClick={handleSubmit}>Salvar</button>
+          <footer className="text-xs italic">
+            <p>
+              Other changes are not allowed. Please make another product to
+              change name, description, picture and price.
+            </p>
+          </footer>
         </>
       )}
     </div>
