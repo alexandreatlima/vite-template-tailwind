@@ -66,15 +66,24 @@ export function BusinessEdit() {
     }
   }
 
+  function handleLogOut() {
+    localStorage.removeItem("loggedInUser");
+    setLoggedInUser(null);
+    navigate("/");
+  }
+
   return (
     <>
       <BusinessNavBar />
-      <div className="container">
+      <div className="container pb-8 mb-0">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
               <div>
-                <img src={form.picture}></img>
+                <img
+                  src={form.picture}
+                  className="w-56 h-56 rounded-full mb-5 border-4 border-black"
+                ></img>
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
                   Your Profile Picture:
                 </h3>
@@ -239,6 +248,13 @@ export function BusinessEdit() {
                   className="rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
                   Save
+                </button>
+                <button
+                  onClick={handleLogOut}
+                  type="submit"
+                  className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Log out
                 </button>
               </div>
             </div>

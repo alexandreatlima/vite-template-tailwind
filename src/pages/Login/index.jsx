@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { api } from "../../api/api";
 import { AuthContext } from "../../contexts/authContext";
 import img from "../../images/cover.jpg";
@@ -16,7 +16,7 @@ export function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSumit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     try {
       const response = await api.post("/api/user/login", form);
@@ -38,7 +38,7 @@ export function Login() {
       <h1 className="text-5xl font-bold text-center mb-12 pt-24">Login</h1>
 
       <div className="w-10/12 flex flex-col justify-center items-center m-auto">
-        <form onSubmit={handleSumit}>
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-col chat-notification-title gap-6 w-72">
             <div className="flex flex-col">
               <label>Email:</label>
@@ -63,10 +63,13 @@ export function Login() {
               />
             </div>
           </div>
-          <div className="mx-auto mt-12 text-center">
-            <button type="submit" className="btn-indigo mx-auto text-center">
+          <div className="flex flex-row mx-auto mt-12 justify-evenly">
+            <button type="submit" className="btn-indigo text-center">
               Entrar!
             </button>
+            <Link to="/signup">
+              <button className="btn-indigo">Sign up</button>
+            </Link>
           </div>
         </form>
       </div>
