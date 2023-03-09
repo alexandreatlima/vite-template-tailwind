@@ -82,7 +82,7 @@ export function Profile() {
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
               <div>
-                <img src="https://res.cloudinary.com/dukhlscyh/image/upload/v1678297300/pictures/file_zbjqpx.png"></img>
+                <img src={form.picture}></img>
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
                   Your Profile Picture:
                 </h3>
