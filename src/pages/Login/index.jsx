@@ -37,9 +37,9 @@ export function Login() {
     <>
       <h1 className="text-3xl font-bold text-center my-4 ">Login</h1>
 
-      <div class="flex justify-center ">
+      <div className="flex justify-center ">
         <form onSubmit={handleSumit}>
-          <div class="flex flex-col chat-notification-title">
+          <div className="flex flex-col chat-notification-title">
             <label>Email:</label>
             <input
               type="email"
