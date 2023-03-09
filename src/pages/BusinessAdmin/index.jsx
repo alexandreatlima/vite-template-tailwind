@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../api/api";
 
+// Aqui faltam btns para fazer softdelete nas orders antigas.
+
 export function BusinessAdmin() {
   const [myOrders, setMyOrders] = useState([]);
   const [myProducts, setMyProducts] = useState([]);
@@ -25,7 +27,7 @@ export function BusinessAdmin() {
   console.log(myProducts);
   return (
     <div>
-      <Link to="/business/admin/create-form">Create your order here</Link>
+      <Link to="/business/admin/create-form">Create new product here</Link>
       <Link to="/business/admin/profile">Profile</Link>
       {!isLoading && (
         <>
@@ -35,7 +37,8 @@ export function BusinessAdmin() {
             .filter(
               (currentOrder) =>
                 currentOrder.status !== "CANCELED" &&
-                currentOrder.status !== "CONCLUDED"
+                currentOrder.status !== "CONCLUDED" &&
+                currentOrder.status !== "REJECTED BY COMPANY"
             )
             .map((currentOrder) => {
               return (
@@ -56,9 +59,17 @@ export function BusinessAdmin() {
             return (
               <div key={currentProduct._id}>
                 <p>{currentProduct.name}</p>
-                <p>{currentProduct.price}</p>
+                <p>{`R$ ${Math.floor(currentProduct.price / 100)},${
+                  String(currentProduct.price)[
+                    String(currentProduct.price).length - 2
+                  ]
+                }${
+                  String(currentProduct.price)[
+                    String(currentProduct.price).length - 1
+                  ]
+                }`}</p>
                 <p>{currentProduct.description}</p>
-                <img src={currentProduct.picture} />
+                <img src={currentProduct.picture} className="w-52 max-h-56" />
                 <Link to={`/business/admin/viewMagic/${currentProduct._id}`}>
                   Detalhes do Produto
                 </Link>
@@ -72,7 +83,8 @@ export function BusinessAdmin() {
             .filter(
               (currentOrder) =>
                 currentOrder.status == "CANCELED" ||
-                currentOrder.status == "CONCLUDED"
+                currentOrder.status == "CONCLUDED" ||
+                currentOrder.status == "REJECTED BY COMPANY"
             )
             .map((currentOrder) => {
               return (
