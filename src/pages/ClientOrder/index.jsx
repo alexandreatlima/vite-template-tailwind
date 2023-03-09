@@ -23,12 +23,18 @@ export function ClientOrder() {
     fetchOrders();
   }, [reload]);
 
-  async function deleteOrder() {
+  async function cancelOrder() {
     try {
-      await api.put(`/api/order/edit/status/${params.idOrder}`, {
-        status: "CANCELED",
-      });
-      setReload(!reload);
+      if (
+        ["CANCELED", "CONCLUDED", "REJECTED BY COMPANY"].includes(orders.status)
+      ) {
+        // Colocar toast dizendo que nao pode alterar por que o pedido ja foi cancelado, rejeitado, ou concluido.
+      } else {
+        await api.put(`/api/order/edit/status/${params.idOrder}`, {
+          status: "CANCELED",
+        });
+        setReload(!reload);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -37,15 +43,15 @@ export function ClientOrder() {
   return (
     <>
       <ClientNavBar />
-      <h1>Your current order in here</h1>
+      <h1>Here is your order</h1>
       {!isLoading && (
         <>
-          <h2>{orders.product.name}</h2>
-          <h2>{orders.business.name}</h2>
-          <h2>{orders.client.name}</h2>
-          <h2>{orders.status}</h2>
+          <h2>Product: {orders.product.name}.</h2>
+          <h2>Business: {orders.business.name}.</h2>
+          <h2>Client: {orders.client.name}.</h2>
+          <h2>Status: {orders.status}.</h2>
 
-          <button onClick={deleteOrder} className="btn-indigo">
+          <button onClick={cancelOrder} className="btn-indigo">
             Cancel order
           </button>
         </>

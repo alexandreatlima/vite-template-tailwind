@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../api/api";
 
+// Aqui faltam btns para fazer softdelete nas orders antigas.
+
 export function BusinessAdmin() {
   const [myOrders, setMyOrders] = useState([]);
   const [myProducts, setMyProducts] = useState([]);
