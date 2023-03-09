@@ -8,7 +8,7 @@ export function ProductDetailsAndOrder(props) {
   }
 
   return (
-    <section className="container flex flex-row justify-center items-center mx-auto mt-5 py-5 w-11/12 bg-white border-2 border-indigo-900 rounded-xl">
+    <section className="container flex flex-row justify-center items-center mx-auto mt-5 mb-0 py-5 w-11/12 bg-white border-2 border-indigo-900 rounded-xl">
       <div className="w-1/2 p-auto border-r-2 border-slate-200 flex justify-center items-center px-12">
         <img
           src={product.picture}

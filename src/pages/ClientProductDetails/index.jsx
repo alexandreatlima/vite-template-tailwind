@@ -56,6 +56,7 @@ export function ClientProductDetails() {
         </button>
       </div>
       <ProductDetailsAndOrder product={selProduct} />
+      <footer className="h-8"></footer>
     </div>
   );
 }

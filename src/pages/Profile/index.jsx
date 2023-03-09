@@ -82,7 +82,7 @@ export function Profile() {
   return (
     <>
       <ClientNavBar />
-      <div className="container">
+      <div className="container pb-6 mb-0 px-20">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
