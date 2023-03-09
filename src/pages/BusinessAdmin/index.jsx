@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../api/api";
+import { BusinessNavBar } from "../../components/BusinessNavBar";
 
 // Aqui faltam btns para fazer softdelete nas orders antigas.
 
@@ -27,8 +28,7 @@ export function BusinessAdmin() {
   console.log(myProducts);
   return (
     <div>
-      <Link to="/business/admin/create-form">Create new product here</Link>
-      <Link to="/business/admin/profile">Profile</Link>
+      <BusinessNavBar />
       {!isLoading && (
         <>
           <h1>My orders</h1>
@@ -47,7 +47,7 @@ export function BusinessAdmin() {
                   <p>{currentOrder.product.name}</p>
                   <p>{currentOrder.status}</p>
                   <Link to={`/business/admin/viewOrder/${currentOrder._id}`}>
-                    LINK AQUI
+                    Orders details
                   </Link>
                 </div>
               );

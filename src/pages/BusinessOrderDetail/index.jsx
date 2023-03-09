@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../api/api";
+import { BusinessNavBar } from "../../components/BusinessNavBar";
 
 export function BusinessOrderDetail() {
   const [order, setOrder] = useState({});
@@ -42,6 +43,7 @@ export function BusinessOrderDetail() {
 
   return (
     <div>
+      <BusinessNavBar />
       <h1>Detalhe do pedido na visão do adm</h1>
       <h1>Here is your order</h1>
       {!isLoading && (
