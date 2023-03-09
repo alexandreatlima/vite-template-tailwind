@@ -17,6 +17,8 @@ import { BusinessForm } from "./pages/BusinessForm";
 import { BusinessProfile } from "./pages/BussinesProfile";
 import { BusinessAdmin } from "./pages/BusinessAdmin";
 import { BusinessEdit } from "./pages/BusinessEdit";
+import { BusinessOrderDetail } from "./pages/BusinessOrderDetail";
+import { BusinessProductDetail } from "./pages/BusinessProductDetail";
 
 function App() {
   return (
@@ -69,6 +71,18 @@ function App() {
             <Route
               path="/business/admin/edit"
               element={<ProtectedBusinessRoute component={BusinessEdit} />}
+            />
+            <Route
+              path="/business/admin/viewOrder/:orderId"
+              element={
+                <ProtectedBusinessRoute component={BusinessOrderDetail} />
+              }
+            />
+            <Route
+              path="/business/admin/viewMagic/:idProduct"
+              element={
+                <ProtectedBusinessRoute component={BusinessProductDetail} />
+              }
             />
             <Route path="*" element={<Error />} />
           </Routes>

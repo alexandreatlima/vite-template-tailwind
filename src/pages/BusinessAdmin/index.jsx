@@ -43,6 +43,9 @@ export function BusinessAdmin() {
                   <p>{currentOrder.client.name}</p>
                   <p>{currentOrder.product.name}</p>
                   <p>{currentOrder.status}</p>
+                  <Link to={`/business/admin/viewOrder/${currentOrder._id}`}>
+                    LINK AQUI
+                  </Link>
                 </div>
               );
             })}
@@ -56,6 +59,9 @@ export function BusinessAdmin() {
                 <p>{currentProduct.price}</p>
                 <p>{currentProduct.description}</p>
                 <img src={currentProduct.picture} />
+                <Link to={`/business/admin/viewMagic/${currentProduct._id}`}>
+                  Detalhes do Produto
+                </Link>
               </div>
             );
           })}
