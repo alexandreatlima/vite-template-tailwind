@@ -36,7 +36,7 @@ export function ProductFeed(props) {
             return (
               <article
                 key={cE._id}
-                className="container bg-slate-100 border border-indigo-300 flex flex-col justify-between items-center w-1/4 gap-5 justify-evenly py-5"
+                className="container bg-white border border-indigo-300 flex flex-col justify-between items-center w-1/4 gap-5 justify-evenly py-5"
               >
                 <img
                   src={cE.picture}
