@@ -1,3 +1,10 @@
+import { BusinessNavBar } from "../../components/BusinessNavBar";
+
 export function BusinessForm() {
-  return <div></div>;
+  return (
+    <>
+      <BusinessNavBar />
+      <div></div>
+    </>
+  );
 }

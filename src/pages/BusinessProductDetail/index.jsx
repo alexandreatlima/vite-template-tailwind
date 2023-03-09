@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NameLogo } from "../../components/NameLogo";
 import { api } from "../../api/api";
+import { BusinessNavBar } from "../../components/BusinessNavBar";
 
 export function BusinessProductDetail() {
   const params = useParams();
@@ -38,6 +39,7 @@ export function BusinessProductDetail() {
   // fazer inputs do form com value do form no handleChange
   return (
     <div>
+      <BusinessNavBar />
       <section className="container flex flex-row justify-center items-center mx-auto mt-5 py-5 w-11/12 bg-slate-100 border-2 border-indigo-900 rounded-xl">
         <div className="w-1/2 p-auto border-r-2 border-slate-200 flex justify-center items-center">
           <img

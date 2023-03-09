@@ -43,11 +43,18 @@ export function Signup() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    const clone = { ...form };
+    if (clone.type === "BUSINESS") {
+      delete clone.cpf;
+      delete clone.businessType;
+      delete clone.favorites;
+    } else {
+      delete clone.cnpj;
+      delete clone.products;
+    }
     try {
       // const imgURL = await handleUpload();
-      await api.post("/api/user/signup", { ...form });
-
+      await api.post("/api/user/signup", { ...clone });
       navigate("/login");
     } catch (error) {
       console.log(error);
@@ -143,7 +150,7 @@ export function Signup() {
                     <input
                       value={form.password}
                       onChange={handleChange}
-                      type="text"
+                      type="password"
                       name="password"
                       id="formPassword"
                       autoComplete="password"
@@ -163,7 +170,7 @@ export function Signup() {
                     <input
                       value={form.confirmPassword}
                       onChange={handleChange}
-                      type="text"
+                      type="password"
                       name="confirmPassword"
                       id="formConfirmPassword"
                       autoComplete="confirmPassword"
@@ -206,7 +213,7 @@ export function Signup() {
                       value={form.businessType}
                       onChange={handleChange}
                       id="formBusiness"
-                      name="type"
+                      name="businessType"
                       autoComplete="business-type"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     >

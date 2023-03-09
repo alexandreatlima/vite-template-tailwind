@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
-import { ClientNavBar } from "../../components/ClientNavBar";
 import { AuthContext } from "../../contexts/authContext";
 import { useContext } from "react";
+import { BusinessNavBar } from "../../components/BusinessNavBar";
 
 export function BusinessProfile() {
   const [form, setForm] = useState([]);
@@ -33,6 +33,7 @@ export function BusinessProfile() {
 
   return (
     <div>
+      <BusinessNavBar />
       <section className="w-screen flex flex-col items-center">
         <h1 className="font-semibold mb-4 text-3xl text-indigo-900">
           Your profile here
