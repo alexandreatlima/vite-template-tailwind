@@ -65,7 +65,7 @@ export function BusinessAdmin() {
             </div>
           </section>
           <section className="w-10/12">
-            <h2 className="border-b-2 border-b-indigo-900 text-2xl text-indigo-900 font-semibold pl-48">
+            <h2 className="border-b-2 border-b-indigo-900 text-2xl text-indigo-900 font-semibold pl-56">
               My Products
             </h2>
             <div className="h-80 overflow-auto bg-white/80 rounded-xl border-2 mt-2 mb-6">

@@ -43,7 +43,7 @@ export function ClientOrder() {
   return (
     <div className="h-screen bg-slate-500/20">
       <ClientNavBar />
-      <div className="mt-6 mx-auto px-24 py-12 flex flex-col gap-8 items-center bg-white/70 rounded-md w-1/2 drop-shadow-2xl shadow-black">
+      <div className="mt-6 mx-auto px-24 py-12 flex flex-col gap-8 items-center bg-white/90 rounded-md w-1/2 drop-shadow-2xl shadow-black">
         <h1 className="text-center text-5xl underline mb-2">
           Here is your order:
         </h1>
@@ -65,7 +65,7 @@ export function ClientOrder() {
                     {orders.client.name}.
                   </li>
                   <li className="w-96 flex flex-row justify-start items-start flex-nowrap">
-                    <h3 className="font-semibold w-48">- Description: </h3>
+                    <h3 className="font-semibold w-64">- Description: </h3>
                     <p className="italic text-sm">
                       {orders.product.description}
                     </p>

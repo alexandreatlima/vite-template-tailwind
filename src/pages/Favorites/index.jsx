@@ -43,10 +43,10 @@ export function Favorites() {
                 key={currentFavorite._id}
                 className="flex flex-row border border-indigo-200 items-center w-10/12 rounded-lg w-11/12 px-4 py-6 h-28"
               >
-                <div className="w-1/3">
+                <div className="w-1/3 h-full">
                   <img
                     src={currentFavorite.picture}
-                    className="w-48 max-h-full shadow-xl rounded-md"
+                    className="w-44 max-h-full shadow-xl rounded-md"
                   />
                 </div>
                 <div className="w-1/3 flex flex-col flex-nowrap items-center gap-2">

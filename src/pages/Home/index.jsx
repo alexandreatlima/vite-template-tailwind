@@ -24,6 +24,17 @@ export function Home() {
             </Link>
           </div>
         </div>
+        <footer className="flex flex-row items-start gap-4 pl-4 mt-8">
+          <div className="font-semibold">
+            <p>- Powered by: </p>
+          </div>
+          <div className="text-sm italic">
+            <p>- React</p>
+            <p>- Tailwind</p>
+            <p>- Node</p>
+            <p>- Express</p>
+          </div>
+        </footer>
       </div>
     </>
   );

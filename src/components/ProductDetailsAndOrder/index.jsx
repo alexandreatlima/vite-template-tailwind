@@ -43,7 +43,7 @@ export function ProductDetailsAndOrder(props) {
           </li>
           <li>
             <span className="font-semibold">- Description:</span>{" "}
-            {product.description}.
+            <span className="italic">{product.description}.</span>
           </li>
           <li>
             <span className="font-semibold">- Expiration date:</span>{" "}
