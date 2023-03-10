@@ -8,7 +8,7 @@ export function Home() {
       <div
         className="bg-cover bg-center h-screen pt-16"
         style={{
-          backgroundImage: `url("https://res.cloudinary.com/dukhlscyh/image/upload/v1678394316/pictures/file_ba8fmm.png")`,
+          backgroundImage: `url("https://res.cloudinary.com/dukhlscyh/image/upload/v1678419063/pictures/file_ag1ztc.png")`,
         }}
       >
         <div className="flex flex-col items-start justify-end h-96 pl-52">
@@ -24,17 +24,6 @@ export function Home() {
             </Link>
           </div>
         </div>
-        <footer className="flex flex-row items-start gap-4 pl-4 mt-8">
-          <div className="font-semibold">
-            <p>- Powered by: </p>
-          </div>
-          <div className="text-sm italic">
-            <p>- React</p>
-            <p>- Tailwind</p>
-            <p>- Node</p>
-            <p>- Express</p>
-          </div>
-        </footer>
       </div>
     </>
   );
