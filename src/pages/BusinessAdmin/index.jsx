@@ -24,78 +24,103 @@ export function BusinessAdmin() {
     }
     fetchOrder();
   }, []);
+
   console.log(myOrders);
   console.log(myProducts);
+
   return (
-    <div>
+    <div className="min-h-screen w-screen mb-0">
       <BusinessNavBar />
+      <div className="flex flex-row justify-center h-40 bg-white rounded drop-shadow-lg flex justify-center gap-20 items-end pb-12 px-16 border-b-4 border-indigo-900 w-10/12 mx-auto mb-4">
+        <h1 className="text-6xl text-indigo-900">Admin Page</h1>
+      </div>
       {!isLoading && (
-        <>
-          <h1>My orders</h1>
-
-          {myOrders.orders
-            .filter(
-              (currentOrder) =>
-                currentOrder.status !== "CANCELED" &&
-                currentOrder.status !== "CONCLUDED" &&
-                currentOrder.status !== "REJECTED BY COMPANY"
-            )
-            .map((currentOrder) => {
-              return (
-                <div key={currentOrder._id}>
-                  <p>{currentOrder.client.name}</p>
-                  <p>{currentOrder.product.name}</p>
-                  <p>{currentOrder.status}</p>
-                  <Link to={`/business/admin/viewOrder/${currentOrder._id}`}>
-                    Orders details
-                  </Link>
-                </div>
-              );
-            })}
-
-          <h1>My Products</h1>
-
-          {myProducts.map((currentProduct) => {
-            return (
-              <div key={currentProduct._id}>
-                <p>{currentProduct.name}</p>
-                <p>{`R$ ${Math.floor(currentProduct.price / 100)},${
-                  String(currentProduct.price)[
-                    String(currentProduct.price).length - 2
-                  ]
-                }${
-                  String(currentProduct.price)[
-                    String(currentProduct.price).length - 1
-                  ]
-                }`}</p>
-                <p>{currentProduct.description}</p>
-                <img src={currentProduct.picture} className="w-52 max-h-56" />
-                <Link to={`/business/admin/viewMagic/${currentProduct._id}`}>
-                  Detalhes do Produto
-                </Link>
-              </div>
-            );
-          })}
-
-          <h1>History</h1>
-
-          {myOrders.orders
-            .filter(
-              (currentOrder) =>
-                currentOrder.status == "CANCELED" ||
-                currentOrder.status == "CONCLUDED" ||
-                currentOrder.status == "REJECTED BY COMPANY"
-            )
-            .map((currentOrder) => {
-              return (
-                <div key={currentOrder._id}>
-                  <p>{currentOrder.client.name}</p>
-                  <p>{currentOrder.product.name}</p>
-                  <p>{currentOrder.status}</p>
-                </div>
-              );
-            })}
-        </>
+        <div className="container border-none flex flex-col items-center w-screen">
+          <section className="w-10/12">
+            <h2 className="border-b-2 border-b-indigo-900 text-2xl text-indigo-900 font-semibold pl-4">
+              My orders
+            </h2>
+            <div className="h-80 overflow-auto bg-white/80 rounded-xl border-2 mt-2 mb-6 ">
+              {myOrders.orders
+                .filter(
+                  (currentOrder) =>
+                    currentOrder.status !== "CANCELED" &&
+                    currentOrder.status !== "CONCLUDED" &&
+                    currentOrder.status !== "REJECTED BY COMPANY"
+                )
+                .map((currentOrder) => {
+                  return (
+                    <div key={currentOrder._id}>
+                      <p>{currentOrder.client.name}</p>
+                      <p>{currentOrder.product.name}</p>
+                      <p>{currentOrder.status}</p>
+                      <Link
+                        to={`/business/admin/viewOrder/${currentOrder._id}`}
+                      >
+                        Orders details
+                      </Link>
+                    </div>
+                  );
+                })}
+            </div>
+          </section>
+          <section className="w-10/12">
+            <h2 className="border-b-2 border-b-indigo-900 text-2xl text-indigo-900 font-semibold pl-56">
+              My Products
+            </h2>
+            <div className="h-80 overflow-auto bg-white/80 rounded-xl border-2 mt-2 mb-6">
+              {myProducts.map((currentProduct) => {
+                return (
+                  <div key={currentProduct._id}>
+                    <p>{currentProduct.name}</p>
+                    <p>{`R$ ${Math.floor(currentProduct.price / 100)},${
+                      String(currentProduct.price)[
+                        String(currentProduct.price).length - 2
+                      ]
+                    }${
+                      String(currentProduct.price)[
+                        String(currentProduct.price).length - 1
+                      ]
+                    }`}</p>
+                    <p>{currentProduct.description}</p>
+                    <img
+                      src={currentProduct.picture}
+                      className="w-52 max-h-56"
+                    />
+                    <Link
+                      to={`/business/admin/viewMagic/${currentProduct._id}`}
+                    >
+                      Detalhes do Produto
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+          <section className="w-10/12 mb-0">
+            <h2 className="border-b-2 border-b-indigo-900 text-2xl text-indigo-900 font-semibold text-center">
+              History
+            </h2>
+            <div className="h-80 overflow-auto bg-white/80 rounded-xl border-2 mt-2 mb-6">
+              {myOrders.orders
+                .filter(
+                  (currentOrder) =>
+                    currentOrder.status == "CANCELED" ||
+                    currentOrder.status == "CONCLUDED" ||
+                    currentOrder.status == "REJECTED BY COMPANY"
+                )
+                .map((currentOrder) => {
+                  return (
+                    <div key={currentOrder._id}>
+                      <p>{currentOrder.client.name}</p>
+                      <p>{currentOrder.product.name}</p>
+                      <p>{currentOrder.status}</p>
+                    </div>
+                  );
+                })}
+            </div>
+          </section>
+        </div>
       )}
     </div>
   );

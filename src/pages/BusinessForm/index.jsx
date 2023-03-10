@@ -52,9 +52,9 @@ export function BusinessForm() {
   }
 
   return (
-    <div>
+    <div className="w-screen">
       <BusinessNavBar />
-      <div className="container">
+      <div className="container w-1/2 mb-0 pb-8 pl-40">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">

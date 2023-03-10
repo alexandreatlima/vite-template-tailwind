@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
 
 export function Signup() {
@@ -72,7 +72,7 @@ export function Signup() {
 
   return (
     <>
-      <div className="container">
+      <div className="container mb-0 pb-8">
         <form
           onSubmit={handleSubmit}
           className="space-y-8 divide-y divide-gray-200"
@@ -80,7 +80,7 @@ export function Signup() {
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
               <div>
-                <h3 className="text-base font-semibold leading-6 text-gray-900">
+                <h3 className="text-2xl font-semibold leading-6 text-gray-900">
                   Sign up
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
@@ -322,12 +322,14 @@ export function Signup() {
 
           <div className="pt-5">
             <div className="flex justify-end">
-              <button
-                type="button"
-                className="rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-              >
-                Cancel
-              </button>
+              <Link to="/">
+                <button
+                  type="button"
+                  className="rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+              </Link>
               <button
                 type="submit"
                 className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
