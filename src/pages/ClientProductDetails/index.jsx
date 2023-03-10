@@ -34,7 +34,7 @@ export function ClientProductDetails() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-200">
       <ClientNavBar />
       <NameLogo product={selProduct} />
       <div className="flex w-9/12 flex-row mx-auto justify-end mt-2">
@@ -56,6 +56,7 @@ export function ClientProductDetails() {
         </button>
       </div>
       <ProductDetailsAndOrder product={selProduct} />
+      <footer className="h-8"></footer>
     </div>
   );
 }

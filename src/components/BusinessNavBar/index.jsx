@@ -4,13 +4,13 @@ export function BusinessNavBar() {
   const NavBtnClass =
     "flex flex-row items-center justify-center gap-2 w-32 transition px-3 py-1 rounded-lg drop-shadow box-border hover:border-2 hover:border-solid hover:border-indigo-800 hover:bg-indigo-500";
   return (
-    <nav className="h-16 text-lg border-b-2 border-indigo-400 flex flex-row items-center justify-evenly p-2 bg-indigo-700 mb-8 font-semibold text-indigo-100 shadow-xl">
+    <nav className="h-20 text-lg border-b-2 border-indigo-400 flex flex-row items-center justify-evenly p-2 bg-indigo-700 mb-8 font-semibold text-indigo-100 shadow-xl">
       <Link to="/business/admin/create-form" className={NavBtnClass}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="w-5 h-5"
+          className="w-8 h-8"
         >
           <path
             fillRule="evenodd"

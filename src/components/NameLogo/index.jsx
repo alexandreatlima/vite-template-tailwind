@@ -32,13 +32,15 @@ export function NameLogo(props) {
   console.log("Everything is alright. Picture URL bellow:");
   console.log(product.creator.picture);
   const logoUrl = product.creator.picture;
-  const fullClassWithBgImg = `rounded-full w-32 h-32 border-2 border-black p-auto bg-[url("${product.creator.picture}")]`;
+  const fullClassWithBgImg = `rounded-full w-32 h-32 border-2 border-black p-auto`;
   return (
-    <div className="bg-slate-100 rounded drop-shadow-lg flex justify-center gap-20 items-center px-16 border-b-4 border-indigo-900 w-9/12 mx-auto p-6">
+    <div className="bg-white rounded drop-shadow-lg flex justify-center gap-20 items-center px-16 border-b-4 border-indigo-900 w-9/12 mx-auto p-6">
       <h1 className="text-6xl text-indigo-900">{product.name}</h1>
-      <div className={fullClassWithBgImg}>
-        <img src={logoUrl} alt="Logo" className="hidden" />
-      </div>
+      <img
+        src={logoUrl}
+        alt="Logo"
+        className="rounded-full w-32 h-32 border-4 border-slate-800"
+      />
     </div>
   );
 }

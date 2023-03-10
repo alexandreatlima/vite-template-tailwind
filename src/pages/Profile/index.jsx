@@ -82,12 +82,15 @@ export function Profile() {
   return (
     <>
       <ClientNavBar />
-      <div className="container">
+      <div className="container pb-6 mb-0 px-20">
         <form className="space-y-8 divide-y divide-gray-200">
           <div className="space-y-8 divide-y divide-gray-200">
             <div className="pt-8">
               <div>
-                <img src={form.picture}></img>
+                <img
+                  src={form.picture}
+                  className="w-56 h-56 rounded-full mb-5 border-4 border-black"
+                ></img>
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
                   Your Profile Picture:
                 </h3>
@@ -173,8 +176,8 @@ export function Profile() {
                       onChange={handleChange}
                       value={form.address}
                       type="text"
-                      name="street-address"
-                      id="street-address"
+                      name="address"
+                      id="address"
                       autoComplete="street-address"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
