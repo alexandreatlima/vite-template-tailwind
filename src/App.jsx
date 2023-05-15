@@ -1,12 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import { AuthRouteProtector } from "./components/AuthRouteProtector";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Error } from "./pages/Error";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Profile } from "./pages/Profile";
 import { Signup } from "./pages/Signup";
-
-import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route
             path="/profile"
-            element={<ProtectedRoute component={Profile} />}
+            element={<AuthRouteProtector component={Profile} />}
           />
 
           <Route path="*" element={<Error />} />

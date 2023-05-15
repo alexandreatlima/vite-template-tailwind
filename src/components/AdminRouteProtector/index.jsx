@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function ProtectedRoute(props) {
+export function AdminRouteProtector(props) {
   const { component: Component } = props;
   const navigate = useNavigate();
 
